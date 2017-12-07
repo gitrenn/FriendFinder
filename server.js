@@ -9,7 +9,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true })); // set to true so it works with arrays besides number, string and boolean
 app.use(bodyParser.json());
 
 // routes 

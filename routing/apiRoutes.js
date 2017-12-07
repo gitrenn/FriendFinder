@@ -9,6 +9,7 @@ module.exports = function(app){
     });
 
     app.post("/api/friends", function(req, res){
+        req.body.scores.map(Number);
         friendsData.push(req.body);
         res.json(true);
     })

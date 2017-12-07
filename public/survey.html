@@ -209,14 +209,15 @@
 
 				// If all required fields are filled
 				if (validateForm() == true) {
+					var userScores = [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()];
+					var userScoresToNum = userScores.map(Number);
 					// Create an object for the user's data
 					var userData = {
-						name: $("#name").val(),
-						photo: $("#photo").val(),
-						scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+						name: $("#userName").val(),
+						photo: $("#picLink").val(),
+						scores: userScoresToNum
 					}
-
-
+					
 					// Grab the URL of the website
 					var currentURL = window.location.origin;
 
@@ -237,8 +238,7 @@
 				}
 
 				return false;
-				//$(".chosen-select").val("");
-				//$("select").val([]);
+				
 			});
 		})
 	</script>
